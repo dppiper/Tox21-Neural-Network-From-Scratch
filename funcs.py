@@ -21,3 +21,8 @@ def weighted_sum(fingerprints, weights, bias):
     fingerprint_matrix = np.stack(fingerprints)
 
     return np.dot(fingerprint_matrix, weights) + bias
+
+def relu(x):
+    """Computes the ReLU of x
+    """
+    return max(0, x)
