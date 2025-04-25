@@ -25,4 +25,4 @@ def weighted_sum(fingerprints, weights, bias):
 def relu(x):
     """Computes the ReLU of x
     """
-    return max(0, x)
+    return np.maximum(0, x)
