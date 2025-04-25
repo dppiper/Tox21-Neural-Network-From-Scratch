@@ -26,3 +26,9 @@ def relu(x):
     """Computes the ReLU of x
     """
     return np.maximum(0, x)
+
+def relu_prime(x):
+    """Compute derivative of ReLU
+    """
+
+    return x > 0
