@@ -6,21 +6,7 @@ def sigmoid(x):
 
     return 1 / (1+np.exp(-x))
 
-def bce(*, ground_truths, predicted_probabilities):
-    """Computes the binary cross-entropy loss
-    """
-    epsilon = 1e-8
-    loss = -(ground_truths*np.log(predicted_probabilities + epsilon) + 
-             (1-ground_truths)*np.log(1-predicted_probabilities + epsilon))
-
     return loss
-
-def weighted_sum(fingerprints, weights, bias):
-    """Computes the weighted sum of the fingerprint
-    """
-    fingerprint_matrix = np.stack(fingerprints)
-
-    return np.dot(fingerprint_matrix, weights) + bias
 
 def relu(x):
     """Computes the ReLU of x
@@ -45,4 +31,20 @@ def weighted_bce(y_true, y_pred, pos_weight=1.0, neg_weight=1.0, epsilon=1e-8):
              neg_weight * (1 - y_true) * np.log(1 - y_pred))
     
     return np.mean(loss)
+
+def clip_gradients(gradients, max_norm = 5):
+    """Clip gradients if the norm is too high
+    """
+
+    total_norm = 0
+
+    for gradient in gradients:
+        total_norm += np.sum(gradient ** 2)
+    total_norm = np.sqrt(total_norm)
+
+    if total_norm > max_norm:
+        scale = max_norm / (total_norm + 1e-8)
+        gradients = [grad * scale for gradient in gradients]
+
+    return gradients
 
