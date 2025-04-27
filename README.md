@@ -1,4 +1,4 @@
-# Tox21 CLassification Neurarl Network From Scratch
+# Tox21 CLassification Neural Network From Scratch
 These models utilize data from the [Tox21](https://tripod.nih.gov/tox21/challenge/data.jsp#) public dataset.
 
 ## Single Neuron Model
