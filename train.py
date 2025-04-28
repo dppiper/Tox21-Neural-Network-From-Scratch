@@ -5,7 +5,7 @@ from rdkit.Chem import rdFingerprintGenerator
 from multi_layer_funcs import *
 
 ## Load Data
-# Load data
+# Load data from csv
 df = pd.read_csv('../nr-ar.smiles', sep='\t', header=None).dropna()
 
 # Rename columns
