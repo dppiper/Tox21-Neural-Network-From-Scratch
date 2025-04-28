@@ -3,8 +3,6 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from multi_layer_funcs import *
-import seaborn as sns
-from tqdm import tqdm
 
 ## Load Data
 # Load data
@@ -65,7 +63,7 @@ all_losses_val = []
 
 
 ## Train Model
-for i in tqdm(range(num_epochs)):
+for i in range(num_epochs):
 
     ## Forward pass
     z1 = np.dot(X, weights_1) + bias_1
