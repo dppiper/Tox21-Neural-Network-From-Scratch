@@ -1,20 +1,24 @@
 # Tox21 Classification Neural Network From Scratch
+This project implements a fully vectorized two-layer neural network from scratch using only **NumPy** to classify chemical compounds based on their molecular fingerprints and activity.
+
 These models utilize data from the [Tox21](https://tripod.nih.gov/tox21/challenge/data.jsp#) public dataset.
 
-## Single Neuron Model
-This is a simple logistic regression model with an output layer.
-
-## Multi-layer Model
-This model utilizes a hidden layer and output layer to extrapolate more patterns from the data.  
-
+## Key Features
 Some techniques used in the model include:
-- Xavier Initialization
-- Weighted binary cross-entropy loss
-- Gradient clipping by norm
-- Learning rate warm-up
+- Fully vectorized forward and backward pass
+- Hidden layer with ReLU activation
+- Sigmoid output for binary classification
+- **Weighted binary cross-entropy loss** to handle class imbalance
+- **Gradient clipping** to prevent exploding gradients
+- **Learning rate warm-up** for stable early training
+- **Validation loss tracking** and best model saving
+- Clean loss visualizations (train vs val) using `seaborn`
 
     
 
 ***The  multi-layer model is able to acheive an F1  > 0.6  and PRC-AUC > 0.5 on unseen test data:***
-![alt text](image.png)
-![alt text](image-1.png)
+
+![alt text](plots/confusion_matrix.png)
+![alt text](plots/prc_curve.png)
+
+
