@@ -19,9 +19,9 @@ class NeuralNet:
 
         ## Val Split
         np.random.seed(self.random_seed)
-        np.random.shuffle(X)
+        X = np.random.permutation(X)
         np.random.seed(self.random_seed)
-        np.random.shuffle(y)
+        y = np.random.permutation(y)
 
         num_samples = len(X)
         X_val = X[0:int(num_samples*self.val_split)]
@@ -98,8 +98,12 @@ class NeuralNet:
             weights_1 -= learning_rate * dL_dweights_1
             bias_1 -= learning_rate * dL_dbias_1
 
-            if i%10 == 0:
-                print(f'{i} / {self.num_epochs}')
+            if (i+1)%10 == 0:
+                print(f'{i+1} / {self.num_epochs}')
+
+            if i+1 == self.num_epochs:
+                print('Model training complete.')
+
 
     def predict(self, X):
 
