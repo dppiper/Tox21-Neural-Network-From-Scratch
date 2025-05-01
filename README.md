@@ -28,9 +28,9 @@ Some techniques used in the model include:
 │   ├── validation_loss.png  # Plot of validation loss over epochs
 ├── notebooks/
 │   └── single_neuron_model.ipynb # Notebook showing a single-neuron (logistic regression) model
-|   └── single_neuron_funcs.py # Functions for single-neuron model
-|   └── multi_layer_model.ipynb # Notebook showing a multi-layer model
-|   └── multi_layer_funcs.py # Functions for multi-layer model
+│  └── single_neuron_funcs.py # Functions for single-neuron model
+│  └── multi_layer_model.ipynb # Notebook showing a multi-layer model
+│  └── multi_layer_funcs.py # Functions for multi-layer model
 
 ```
 
