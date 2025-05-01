@@ -1,3 +1,5 @@
 /nr-ar.smiles
 */__pycache__/
+__pycache__
 .pyc
+test.ipynb
